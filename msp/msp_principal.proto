@@ -47,6 +47,7 @@ message MSPPrincipal {
         ANONYMITY = 3; // Denotes a principal that can be used to enforce
         // an identity to be anonymous or nominal.
         COMBINED = 4; // Denotes a combined principal
+        EPHEMERAL = 5; // An identity derived from another
     }
 
     // Classification describes the way that one should process

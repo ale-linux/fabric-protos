@@ -18,6 +18,18 @@ message SerializedIdentity {
 
     // the Identity, serialized according to the rules of its MPS
     bytes id_bytes = 2;
+
+    enum Type {
+        MSP = 0;
+        EPHEMERAL = 1;
+    }
+
+    Type type = 3;
+}
+
+message EphemeralIdentity {
+    bytes public_key = 1;
+    bytes expansion = 2;
 }
 
 // This struct represents an Idemix Identity

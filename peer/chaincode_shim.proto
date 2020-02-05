@@ -12,6 +12,7 @@ package protos;
 import "peer/chaincode_event.proto";
 import "peer/proposal.proto";
 import "google/protobuf/timestamp.proto";
+import "common/policies.proto";
 
 message ChaincodeMessage {
     enum Type {
@@ -37,6 +38,7 @@ message ChaincodeMessage {
         GET_STATE_METADATA = 20;
         PUT_STATE_METADATA = 21;
         GET_PRIVATE_DATA_HASH = 22;
+        GET_EPHEMERAL_POLICY = 23;
     }
 
     Type type = 1;
@@ -85,6 +87,10 @@ message PutStateMetadata {
     string key = 1;
     string collection = 3;
     StateMetadata metadata = 4;
+}
+
+message GetEphemeralPolicy {
+	common.SignaturePolicyEnvelope policy = 1;
 }
 
 // DelState is the payload of a ChaincodeMessage. It contains a key which
