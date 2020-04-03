@@ -48,6 +48,7 @@ message MSPPrincipal {
         // an identity to be anonymous or nominal.
         COMBINED = 4; // Denotes a combined principal
         EPHEMERAL = 5; // An identity derived from another
+		PK = 6; // A serialised public key
     }
 
     // Classification describes the way that one should process
