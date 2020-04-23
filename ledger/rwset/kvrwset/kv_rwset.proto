@@ -30,6 +30,7 @@ message HashedRWSet {
 message KVRead {
     string key = 1;
     Version version = 2;
+	uint64 speculative_version = 3;
 }
 
 // KVWrite captures a write (update/delete) operation performed during transaction simulation
@@ -37,6 +38,7 @@ message KVWrite {
     string key = 1;
     bool is_delete = 2;
     bytes value = 3;
+	uint64 speculative_version = 4;
 }
 
 // KVMetadataWrite captures all the entries in the metadata associated with a key
